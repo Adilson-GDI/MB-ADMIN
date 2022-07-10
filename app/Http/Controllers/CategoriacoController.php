@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produto as ModelsProduto;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model\Produto;
-use Symfony\Component\Console\Input\Input;
+use App\Models\categoria;
 
-class ProdutosController extends Controller
+class CategoriacoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,10 @@ class ProdutosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    
-        $produtos = ModelsProduto::all();
-        return view('list', compact('produtos'));
+    {
+        $categoria=Categoria::all();
+
+        return $categoria;
     }
 
     /**
@@ -27,8 +26,7 @@ class ProdutosController extends Controller
      */
     public function create()
     {
-        
-        return view('add');
+        //
     }
 
     /**
@@ -39,12 +37,7 @@ class ProdutosController extends Controller
      */
     public function store(Request $request)
     {
-    
-        $produto = new ModelsProduto;
-        $produto -> name = $request->input('name');
-        $produto -> price = $request->input('price');
-        $produto -> save();
-        return redirect('/produtos/list');
+        //
     }
 
     /**
@@ -66,10 +59,7 @@ class ProdutosController extends Controller
      */
     public function edit($id)
     {
-        $produto = ModelsProduto::find($id);
-        if(isset($produto)){
-           return view('edit', compact('produto'));
-        }
+        //
     }
 
     /**
@@ -81,14 +71,7 @@ class ProdutosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $produto = ModelsProduto::find($id);
-        if(isset($produto)){
-          $produto->name = $request->input('name');
-          $produto->price = $request->input('price');
-          $produto->id_categoria = $request->input('categoria');
-          $produto->save();
-        }
-        return redirect('/produtos/list');
+        //
     }
 
     /**
@@ -99,10 +82,6 @@ class ProdutosController extends Controller
      */
     public function destroy($id)
     {
-        $produto = ModelsProduto::find($id);
-        if(isset($produto)){
-            $produto->delete();
-            return redirect('/produtos/list');
-        }
+        //
     }
 }

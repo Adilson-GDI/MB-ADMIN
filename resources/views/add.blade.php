@@ -38,6 +38,10 @@
               <label for="cases">Product Price :</label>
               <input type="text" class="form-control" name="price" required/>
           </div>
+          <div class="form-group">
+              <label for="cases">Categoria :</label>
+              <input type="text" class="form-control" name="categoria" required/>
+          </div>
           <button type="submit" class="btn btn-primary">Add </button>
       </form>
   </div>
