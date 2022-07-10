@@ -1,7 +1,7 @@
 
 
 
-php artisan make:controller ProdutosController --resource
+php artisan make:controller PerfilController --resource
 
 php artisan make:model Produto
 
