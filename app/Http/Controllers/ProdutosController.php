@@ -43,6 +43,7 @@ class ProdutosController extends Controller
         $produto = new ModelsProduto;
         $produto -> name = $request->input('name');
         $produto -> price = $request->input('price');
+        $produto -> price = $request->input('price');
         $produto -> save();
         return redirect('/produtos/list');
     }
