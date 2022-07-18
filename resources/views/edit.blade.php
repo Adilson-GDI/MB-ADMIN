@@ -42,7 +42,7 @@
 
           <div class="form-group">
               <label for="cases">Categoria :</label>
-              <input type="number" class="form-control" name="categoria" value="{{$produto->price}}" required/>
+              <input type="number" class="form-control" name="categoria" value="{{$produto->id_categoria}}" required/>
           </div>
           <button type="submit" class="btn btn-primary">Edit </button>
       </form>
