@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OauthAccessTokens;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,23 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+       // $this->middleware('auth');
+     
+
+       
+    }
+
+
+    public function show(Request $request)
+    {
+        return OauthAccessTokens::find($request->get("token"));
+    }
+
+    public function find($id)
+    {
+        $this->user = $this->user::find($id);
+
+        return $this->user;
     }
 
     /**
